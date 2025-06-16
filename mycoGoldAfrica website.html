@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MycoGold Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-green-600">MycoGold Africa</span>
+                </div>
+                <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#impact" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium">Impact</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium">Gallery</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    <a href="#admin-login" id="admin-link" class="text-gray-600 hover:text-green-600 px-3 py-2 text-sm font-medium">Admin</a>
+                </div>
+                <div class="sm:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-600 hover:text-green-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden sm:hidden bg-white shadow">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-4 py-2 text-gray-600 hover:bg-green-50 hover:text-green-600">Home</a>
+                <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-green-50 hover:text-green-600">About</a>
+                <a href="#impact" class="block px-4 py-2 text-gray-600 hover:bg-green-50 hover:text-green-600">Impact</a>
+                <a href="#gallery" class="block px-4 py-2 text-gray-600 hover:bg-green-50 hover:text-green-600">Gallery</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-600 hover:bg-green-50 hover:text-green-600">Contact</a>
+                <a href="#admin-login" id="mobile-admin-link" class="block px-4 py-2 text-gray-600 hover:bg-green-50 hover:text-green-600">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Dynamic Background -->
+    <section id="home" class="pt-20 bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1920x600?text=Default+Background')" data-background-id="default">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center bg-black bg-opacity-50">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white animate-fade-in">MycoGold Africa</h1>
+            <p class="mt-4 text-xl text-white animate-fade-in delay-200">Cultivating Youth, Nourishing the Future</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <button id="psychology-btn" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 animate-fade-in delay-400">Youth Empowerment</button>
+                <button id="agriculture-btn" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300 animate-fade-in delay-400">Mushroom Farming</button>
+            </div>
+        </div>
+
+        <!-- Toggle Sections -->
+        <div id="psychology-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-blue-50 rounded-lg">
+            <h2 class="text-3xl font-bold text-blue-800 text-center animate-slide-up">Youth Empowerment & Mental Health</h2>
+            <p class="mt-4 text-lg text-gray-600 text-center animate-slide-up delay-200">
+                We empower African youth through mental health support, mentorship programs, and skill-building initiatives to foster resilience and purpose.
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <h3 class="text-xl font-semibold text-blue-600">Mental Health Support</h3>
+                    <p class="mt-2 text-gray-600">Providing counseling and resources to address mental health challenges among youth.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-600">
+                    <h3 class="text-xl font-semibold text-blue-600">Mentorship Programs</h3>
+                    <p class="mt-2 text-gray-600">Connecting youth with mentors to guide them toward personal and professional growth.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-800">
+                    <h3 class="text-xl font-semibold text-blue-600">Skill Building</h3>
+                    <p class="mt-2 text-gray-600">Training programs to equip youth with practical skills for a brighter future.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="agriculture-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-green-50 rounded-lg">
+            <h2 class="text-3xl font-bold text-green-800 text-center animate-slide-up">Mushroom Farming</h2>
+            <p class="mt-4 text-lg text-gray-600 text-center animate-slide-up delay-200">
+                We train youth in sustainable mushroom farming to promote food security and economic empowerment.
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <h3 class="text-xl font-semibold text-green-600">Training Programs</h3>
+                    <p class="mt-2 text-gray-600">Hands-on training in mushroom cultivation techniques for sustainable farming.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-600">
+                    <h3 class="text-xl font-semibold text-green-600">Market Access</h3>
+                    <p class="mt-2 text-gray-600">Connecting farmers to markets to ensure economic viability.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-800">
+                    <h3 class="text-xl font-semibold text-green-600">Sustainability</h3>
+                    <p class="mt-2 text-gray-600">Promoting eco-friendly farming practices to combat climate change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Section -->
+    <section id="admin-login" class="hidden py-16 bg-gray-100">
+        <div class="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">Admin Login</h2>
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-lg">
+                <div class="space-y-4">
+                    <input id="admin-username" type="text" placeholder="Username" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <input id="admin-password" type="password" placeholder="Password" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button id="admin-login-btn" class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">Login</button>
+                    <p id="admin-error" class="text-red-500 text-center hidden">Invalid credentials. Try again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section -->
+    <section id="admin-dashboard" class="hidden py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">Admin Dashboard</h2>
+            <button id="admin-logout" class="mt-4 bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition duration-300">Logout</button>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Profile Background Management -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-700">Manage Profile Background</h3>
+                    <input id="background-upload" type="file" accept="image/*" class="mt-4 w-full p-3 border border-gray-300 rounded-lg">
+                    <button id="background-upload-btn" class="mt-4 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">Upload Background</button>
+                    <div id="background-list" class="mt-4 space-y-2"></div>
+                </div>
+                <!-- Content Management -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-700">Manage Photos & Videos</h3>
+                    <input id="content-upload" type="file" accept="image/*,video/*" class="mt-4 w-full p-3 border border-gray-300 rounded-lg">
+                    <button id="content-upload-btn" class="mt-4 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">Upload Content</button>
+                    <div id="content-list" class="mt-4 space-y-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">Our Gallery</h2>
+            <div id="gallery-content" class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">About MycoGold Africa</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="animate-fade-in delay-200">
+                    <h3 class="text-xl font-semibold text-gray-700">Mission Statement</h3>
+                    <p class="mt-2 text-gray-600">To empower youth through sustainable agriculture.</p>
+                </div>
+                <div class="animate-fade-in delay-400">
+                    <h3 class="text-xl font-semibold text-gray-700">Vision Statement</h3>
+                    <p class="mt-2 text-gray-600">A hunger-free, mentally healthy, and climate-conscious Africa.</p>
+                </div>
+                <div class="animate-fade-in delay-600">
+                    <h3 class="text-xl font-semibold text-gray-700">Why We Exist</h3>
+                    <p class="mt-2 text-gray-600">
+                        In a time where youth unemployment is soaring and food insecurity is a growing concern, MycoGold Africa offers a holistic solution.
+                    </p>
+                </div>
+                <div class="animate-fade-in delay-800">
+                    <h3 class="text-xl font-semibold text-gray-700">What We Do</h3>
+                    <p class="mt-2 text-gray-600">We train youth in sustainable agriculture and support their mental health.</p>
+                    <p class="mt-2 text-gray-600">Why it matters: Too many young Africans wake up each day with nothing to do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">Our Impact Areas</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-200">
+                    <h3 class="text-xl font-semibold text-green-600">SDG 1: No Poverty</h3>
+                    <p class="mt-2 text-gray-600">Empowering youth with skills and opportunities to escape poverty.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-400">
+                    <h3 class="text-xl font-semibold text-green-600">SDG 2: Zero Hunger</h3>
+                    <p class="mt-2 text-gray-600">Promoting sustainable agriculture to ensure food security.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 animate-fade-in delay-600">
+                    <h3 class="text-xl font-semibold text-green-600">SDG 3: Good Health</h3>
+                    <p class="mt-2 text-gray-600">Supporting mental health to foster well-being among youth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">Join the Movement</h2>
+            <p class="mt-4 text-lg text-gray-600 text-center animate-fade-in delay-200">
+                Get in touch with us to learn more or join our initiatives.
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="animate-fade-in delay-400">
+                    <h3 class="text-xl font-semibold text-gray-700">Contact Information</h3>
+                    <p class="mt-2 text-gray-600">Email: mycogoldafrica.org@gmail.com</p>
+                    <p class="mt-2 text-gray-600">Phone: +254 0707 173437</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://facebook.com/mycogoldafrica" class="text-gray-600 hover:text-green-600">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="https://instagram.com/mycogoldafrica" class="text-gray-600 hover:text-green-600">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.252-1.691 4.771-4.919 4.919-1.266.058-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.069-4.849.148-3.252 1.691-4.771 4.919-4.919 1.265-.058 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.667.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.667-.014 4.947-.072 4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/company/mycogoldafrica" class="text-gray-600 hover:text-green-600">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-6.455z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-600">
+                    <h3 class="text-xl font-semibold text-gray-700">Send Us a Message</h3>
+                    <div class="mt-4 space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                        <button class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 MycoGold Africa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Functionality and Animations -->
+    <script>
+        // Utility Functions
+        const showSection = (sectionId) => {
+            document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+            gsap.fromTo(`#${sectionId}`, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8 });
+        };
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Section Toggle
+        const psychologyBtn = document.getElementById('psychology-btn');
+        const agricultureBtn = document.getElementById('agriculture-btn');
+        const psychologySection = document.getElementById('psychology-section');
+        const agricultureSection = document.getElementById('agriculture-section');
+
+        psychologyBtn.addEventListener('click', () => {
+            psychologySection.classList.remove('hidden');
+            agricultureSection.classList.add('hidden');
+            gsap.fromTo('#psychology-section', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8 });
+            psychologyBtn.classList.add('bg-blue-600');
+            agricultureBtn.classList.remove('bg-green-600');
+            agricultureBtn.classList.add('bg-green-500');
+        });
+
+        agricultureBtn.addEventListener('click', () => {
+            agricultureSection.classList.remove('hidden');
+            psychologySection.classList.add('hidden');
+            gsap.fromTo('#agriculture-section', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8 });
+            agricultureBtn.classList.add('bg-green-600');
+            psychologyBtn.classList.remove('bg-blue-600');
+            psychologyBtn.classList.add('bg-blue-500');
+        });
+
+        // Admin Authentication
+        const adminLoginBtn = document.getElementById('admin-login-btn');
+        const adminUsername = document.getElementById('admin-username');
+        const adminPassword = document.getElementById('admin-password');
+        const adminError = document.getElementById('admin-error');
+        const adminLink = document.getElementById('admin-link');
+        const mobileAdminLink = document.getElementById('mobile-admin-link');
+        const adminLogout = document.getElementById('admin-logout');
+
+        const checkAuth = () => {
+            const isLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
+            adminLink.textContent = isLoggedIn ? 'Dashboard' : 'Admin';
+            mobileAdminLink.textContent = isLoggedIn ? 'Dashboard' : 'Admin';
+            adminLink.href = isLoggedIn ? '#admin-dashboard' : '#admin-login';
+            mobileAdminLink.href = isLoggedIn ? '#admin-dashboard' : '#admin-login';
+            return isLoggedIn;
+        };
+
+        adminLoginBtn.addEventListener('click', () => {
+            if (adminUsername.value === 'admin' && adminPassword.value === 'password123') {
+                localStorage.setItem('isAdminLoggedIn', 'true');
+                adminError.classList.add('hidden');
+                showSection('admin-dashboard');
+                checkAuth();
+            } else {
+                adminError.classList.remove('hidden');
+            }
+        });
+
+        adminLogout.addEventListener('click', () => {
+            localStorage.removeItem('isAdminLoggedIn');
+            showSection('home');
+            checkAuth();
+        });
+
+        // File Management
+        const backgroundUpload = document.getElementById('background-upload');
+        const backgroundUploadBtn = document.getElementById('background-upload-btn');
+        const backgroundList = document.getElementById('background-list');
+        const contentUpload = document.getElementById('content-upload');
+        const contentUploadBtn = document.getElementById('content-upload-btn');
+        const contentList = document.getElementById('content-list');
+        const galleryContent = document.getElementById('gallery-content');
+        const heroSection = document.getElementById('home');
+
+        const loadBackgrounds = () => {
+            const backgrounds = JSON.parse(localStorage.getItem('backgrounds') || '[]');
+            backgroundList.innerHTML = '';
+            backgrounds.forEach((bg, index) => {
+                const div = document.createElement('div');
+                div.className = 'flex items-center space-x-2';
+                div.innerHTML = `
+                    <img src="${bg.url}" alt="Background ${index}" class="h-16 w-16 object-cover rounded">
+                    <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 delete-bg" data-index="${index}">Delete</button>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 apply-bg" data-index="${index}">Apply</button>
+                `;
+                backgroundList.appendChild(div);
+            });
+
+            // Apply latest background
+            if (backgrounds.length > 0) {
+                const latestBg = backgrounds[backgrounds.length - 1];
+                heroSection.style.backgroundImage = `url(${latestBg.url})`;
+                heroSection.dataset.backgroundId = latestBg.id;
+            }
+
+            // Add delete and apply functionality
+            document.querySelectorAll('.delete-bg').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const index = btn.dataset.index;
+                    let bgs = JSON.parse(localStorage.getItem('backgrounds') || '[]');
+                    bgs.splice(index, 1);
+                    localStorage.setItem('backgrounds', JSON.stringify(bgs));
+                    loadBackgrounds();
+                });
+            });
+
+            document.querySelectorAll('.apply-bg').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const index = btn.dataset.index;
+                    const bgs = JSON.parse(localStorage.getItem('backgrounds') || '[]');
+                    const bg = bgs[index];
+                    heroSection.style.backgroundImage = `url(${bg.url})`;
+                    heroSection.dataset.backgroundId = bg.id;
+                });
+            });
+        };
+
+        const loadContent = () => {
+            const contents = JSON.parse(localStorage.getItem('contents') || '[]');
+            contentList.innerHTML = '';
+            galleryContent.innerHTML = '';
+            contents.forEach((content, index) => {
+                // Admin content list
+                const div = document.createElement('div');
+                div.className = 'flex items-center space-x-2';
+                div.innerHTML = `
+                    ${content.type === 'image' ? 
+                        `<img src="${content.url}" alt="Content ${index}" class="h-16 w-16 object-cover rounded">` :
+                        `<video src="${content.url}" class="h-16 w-16 object-cover rounded" controls></video>`}
+                    <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 delete-content" data-index="${index}">Delete</button>
+                `;
+                contentList.appendChild(div);
+
+                // Gallery content
+                const galleryDiv = document.createElement('div');
+                galleryDiv.className = 'animate-fade-in';
+                galleryDiv.innerHTML = `
+                    ${content.type === 'image' ? 
+                        `<img src="${content.url}" alt="Content ${index}" class="w-full h-64 object-cover rounded-lg shadow-lg">` :
+                        `<video src="${content.url}" class="w-full h-64 object-cover rounded-lg shadow-lg" controls></video>`}
+                `;
+                galleryContent.appendChild(galleryDiv);
+            });
+
+            // Add delete functionality
+            document.querySelectorAll('.delete-content').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const index = btn.dataset.index;
+                    let contents = JSON.parse(localStorage.getItem('contents') || '[]');
+                    contents.splice(index, 1);
+                    localStorage.setItem('contents', JSON.stringify(contents));
+                    loadContent();
+                });
+            });
+        };
+
+        backgroundUploadBtn.addEventListener('click', () => {
+            const file = backgroundUpload.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const backgrounds = JSON.parse(localStorage.getItem('backgrounds') || '[]');
+                    backgrounds.push({ id: Date.now(), url: e.target.result });
+                    localStorage.setItem('backgrounds', JSON.stringify(backgrounds));
+                    loadBackgrounds();
+                    backgroundUpload.value = '';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        contentUploadBtn.addEventListener('click', () => {
+            const file = contentUpload.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const contents = JSON.parse(localStorage.getItem('contents') || '[]');
+                    contents.push({
+                        id: Date.now(),
+                        url: e.target.result,
+                        type: file.type.startsWith('image') ? 'image' : 'video'
+                    });
+                    localStorage.setItem('contents', JSON.stringify(contents));
+                    loadContent();
+                    contentUpload.value = '';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Navigation Handler
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('href').slice(1);
+                if (sectionId === 'admin-dashboard' && !checkAuth()) {
+                    showSection('admin-login');
+                } else {
+                    showSection(sectionId);
+                }
+            });
+        });
+
+        // Initialize
+        checkAuth();
+        loadBackgrounds();
+        loadContent();
+        showSection('home');
+
+        // GSAP Animations
+        gsap.fromTo('.animate-fade-in', { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2 });
+        gsap.fromTo('.animate-slide-up', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 });
+    </script>
+
+    <!-- Custom CSS for Animations -->
+    <style>
+        .animate-fade-in { opacity: 0; }
+        .animate-slide-up { opacity: 0; transform: translateY(50px); }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-800 { animation-delay: 0.8s; }
+    </style>
+</body>
+</html>
